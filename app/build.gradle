@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -32,6 +34,15 @@ dependencies {
     testImplementation testlibs.junit
     androidTestImplementation testlibs.testrunner
     androidTestImplementation testlibs.espresso
+
+    implementation libs.dagger
+    kapt libs.daggercompiler
+    implementation libs.daggerandroid
+    implementation libs.daggerandroidsupport
+    kapt libs.daggerprocessor
+
+    implementation libs.retrofit
+    implementation libs.gsonconvertor
 }
 
 

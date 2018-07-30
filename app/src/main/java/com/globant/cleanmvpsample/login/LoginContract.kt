@@ -1,12 +1,16 @@
 package com.globant.cleanmvpsample.login
 
+import com.globant.cleanmvpsample.BasePresenter
+
 class LoginContract {
 
-    interface View{
+    interface View {
 
     }
 
-    interface Presenter{
+    interface Presenter : BasePresenter {
+
+        fun login(userName: String, password: String)
 
     }
 }

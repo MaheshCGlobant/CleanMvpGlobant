@@ -23,6 +23,11 @@ import android.widget.TextView
 
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
+import android.app.ActivityManager
+import android.content.Context
+import android.content.DialogInterface
+import android.support.v7.app.AlertDialog
+import android.util.Log
 import com.globant.cleanmvpsample.R
 
 import kotlinx.android.synthetic.main.activity_login.*
@@ -48,6 +53,14 @@ class LoginActivity : AppCompatActivity() {
         })
 
         email_sign_in_button.setOnClickListener { attemptLogin() }
+        val am=getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        val cn=am.getRunningTasks(1).get(0).topActivity as Context
+        val alertDialog: AlertDialog = AlertDialog.Builder(cn).create();
+                alertDialog.setTitle("");
+                alertDialog.setMessage("On post execute");
+                alertDialog.setCancelable(false);
+
+                alertDialog.show();
     }
 
 
