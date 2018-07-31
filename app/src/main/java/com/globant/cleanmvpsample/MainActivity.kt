@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity(),LoginContract.View {
                 ?.getPresenterComponent()
                 ?.presenterModule(Presenter2Module())
                 ?.build()
-                ?.inject(this);
+                ?.inject(this@MainActivity);
+
         setContentView(R.layout.activity_main)
     }
 
